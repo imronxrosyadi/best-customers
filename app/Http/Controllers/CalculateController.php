@@ -42,14 +42,13 @@ class CalculateController extends Controller
             array_push($customerPointEvaluationsX, $x);
         }
 
-        for ($i = 0; $i < count($customerPointEvaluationsX); $i++) {
+        for ($i = 0; $i < count($criterias); $i++) {
             $values = array_column($customerPointEvaluationsX, $i);
             $sum = array_sum(array_map(function($x) {
                 return $x ** 2;
             }, $values));
             array_push($performanceRatingsX, sqrt($sum));
         }
-
 
         $normalizationsMatrixR = [];
         foreach ($performanceRatingsX as $i => $performanceRatingX) {
@@ -78,21 +77,20 @@ class CalculateController extends Controller
             array_push($positiveIdealSolutions, max($normalizationMatrixY));
         }
 
-
         $positiveIdealDistances = [];
-        for ($i = 0; $i < count($normalizationsMatrixY); $i++) {
+        for ($i = 0; $i < count($customersEvaluation); $i++) {
             $result = 0;
             for ($j = 0; $j < count($normalizationsMatrixY[$i]); $j++) {
-                $result += ($normalizationsMatrixY[$i][$j] - $positiveIdealSolutions[$i]) ** 2;
+                $result += ($normalizationsMatrixY[$j][$i] - $positiveIdealSolutions[$j]) ** 2;
             }
             array_push($positiveIdealDistances, sqrt($result));
         }
 
         $negativeIdealDistances = [];
-        for ($i = 0; $i < count($normalizationsMatrixY); $i++) {
+        for ($i = 0; $i < count($customersEvaluation); $i++) {
             $result = 0;
             for ($j = 0; $j < count($normalizationsMatrixY[$i]); $j++) {
-                $result += ($normalizationsMatrixY[$i][$j] - $negativeIdealSolutions[$i]) ** 2;
+                $result += ($normalizationsMatrixY[$j][$i] - $negativeIdealSolutions[$j]) ** 2;
             }
             array_push($negativeIdealDistances, sqrt($result));
         }
@@ -118,7 +116,6 @@ class CalculateController extends Controller
         usort($ranking, function($a, $b) {
             return $b['value'] <=> $a['value'];
         });
-        
 
         // Debugbar::info(' values performanceRatingsX!', $performanceRatingsX);
         // Debugbar::info(' values customerPointEvaluationsX!', $customerPointEvaluationsX);
@@ -132,14 +129,7 @@ class CalculateController extends Controller
         // Debugbar::info(' values topsisCustomers!', $topsisCustomers);
         // Debugbar::info(' values ranking!', $ranking);
 
-
-
-
-
-
-
-
-        return view('admin.calculates.index', [ 
+        return view('admin.calculates.index', [
             "customersEvaluation" => $customersEvaluation,
             "criterias" => $criterias,
             "normalizationsMatrixR" => $normalizationsMatrixR,
@@ -179,21 +169,21 @@ class CalculateController extends Controller
     public function store(CustomerEvaluationStoreRequest $request)
     {
 
-        
+
 
         // $result = Customer::create($request->all());
         $customerEvaluation = new CustomerEvaluation();
 
         $customerEvaluation->customer_id = $request->customer_id;
         $customerEvaluation->save();
-        
+
         foreach ($request->subcriteria as $subcriteria) {
             $customerPointEvaluation = new CustomerPointEvaluation();
             $customerPointEvaluation->customers_evaluation_id = $customerEvaluation->id;
             $customerPointEvaluation->sub_criteria_id = $subcriteria;
             $customerPointEvaluation->save();
         }
-        
+
         return redirect()
             ->route('evaluations.index')
             ->with([

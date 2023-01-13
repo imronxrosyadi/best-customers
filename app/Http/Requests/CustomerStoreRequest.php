@@ -24,7 +24,7 @@ class CustomerStoreRequest extends FormRequest
     public function rules()
     {
         return [
-            'idNumber' => 'required|unique:customers|digits:16|numeric',
+            'idNumber' => 'required|unique:customers|numeric',
             'fullName' => 'required',
             'dateOfBirth' => 'required',
             'gender' => 'required|string',

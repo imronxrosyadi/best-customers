@@ -28,11 +28,7 @@ class CustomerStoreRequest extends FormRequest
             'fullName' => 'required',
             'dateOfBirth' => 'required',
             'gender' => 'required|string',
-            'address' => 'required|max:255',
-            'religion' => 'required',
-            'maritalStatus' => 'required',
-            'job' => 'required',
-            'citizenship' => 'required'
+            'address' => 'required|max:255'
         ];
     }
 
@@ -44,11 +40,7 @@ class CustomerStoreRequest extends FormRequest
             'fullName.required' => 'Full Name is required!',
             'dateOfBirth.required' => 'Date of Birth is required!',
             'gender.required' => 'Gender is required!',
-            'address.required' => 'Address is required!',
-            'religion.required' => 'Religion is required!',
-            'maritalStatus.required' => 'Marital Status is required!',
-            'job.required' => 'Job is required!',
-            'citizenship.required' => 'Citizenship is required!',
+            'address.required' => 'Address is required!'
         ];
     }
 }

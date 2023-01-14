@@ -59,11 +59,11 @@
     </li>
 
     <!-- Nav Item - Report -->
-    <li class="{{ (request()->is('admin/reports*')) ? 'active nav-item' : 'nav-item' }}">
-        <a class="nav-link" href="{{ url('admin/reports') }}">
-            <i class="fas fa-poll"></i>
-            <span>Reports</span></a>
-    </li>
+{{--    <li class="{{ (request()->is('admin/reports*')) ? 'active nav-item' : 'nav-item' }}">--}}
+{{--        <a class="nav-link" href="{{ url('admin/reports') }}">--}}
+{{--            <i class="fas fa-poll"></i>--}}
+{{--            <span>Reports</span></a>--}}
+{{--    </li>--}}
 
 
     <!-- Divider -->

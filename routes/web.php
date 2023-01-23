@@ -57,5 +57,7 @@ Route::prefix('admin')->group(function () {
     // Evaluation service
     Route::resource('evaluations', CustomerEvaluationController::class);
     Route::get('/evaluations/delete/{id}', [CustomerEvaluationController::class, 'delete']);
+    Route::get('/calculates/report', [CalculateController::class, 'report']);
     Route::resource('calculates', CalculateController::class);
+
 });

@@ -1,23 +1,23 @@
-@extends('layouts.admin_app')
+@extends('layouts.report_app')
 
-@section('meta_title', 'Calculates')
+@section('meta_title', 'Report')
 
 @section('page_content')
 
 
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
     <h1 class="h3 mb-0 text-gray-800">Calculates</h1>
-    <a href="/admin/calculates/report" class="d-none d-sm-inline-block btn btn-md btn-primary shadow-sm"><i class="fas fa-print text-white-50"></i> Print</a>
+
 </div>
 
 <div class="card shadow mb-4">
     <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">Decision Matrix (X)</h6>
+        <h6 class="m-0 font-weight-bold text-dark">Decision Matrix (X)</h6>
     </div>
     <div class="card-body">
         <div class="table-responsive">
             <table class="table table-bordered" width="100%" cellspacing="0">
-                <thead class="bg-gradient-primary">
+                <thead class="bg-dark">
                     <tr class="text-white">
                         <th width="10">No</th>
                         <th>Customer Name</th>
@@ -44,14 +44,14 @@
 </div>
 
 
-<div class="card shadow mb-4">
+<div class="card shadow mb-4" id='criteriaWeightSection'>
     <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">Criteria Weight (W)</h6>
+        <h6 class="m-0 font-weight-bold text-dark">Criteria Weight (W)</h6>
     </div>
     <div class="card-body">
         <div class="table-responsive">
             <table class="table table-bordered" width="100%" cellspacing="0">
-                <thead class="bg-gradient-primary">
+                <thead class="bg-dark">
                     <tr class="text-white">
                         @foreach ($criterias as $criteria)
                         <th>{{ $criteria->code }}</th>
@@ -73,12 +73,12 @@
 
 <div class="card shadow mb-4">
     <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">Normalization Matrix (R)</h6>
+        <h6 class="m-0 font-weight-bold text-dark">Normalization Matrix (R)</h6>
     </div>
     <div class="card-body">
         <div class="table-responsive">
             <table class="table table-bordered" width="100%" cellspacing="0">
-                <thead class="bg-gradient-primary">
+                <thead class="bg-dark">
                     <tr class="text-white">
                         <th width="10">No</th>
                         <th>Customer Name</th>
@@ -94,7 +94,7 @@
                         <td>{{ $loop->index + 1 }}</td>
                         <td>{{ $customerEvaluation->customer->fullName }}</td>
                         @foreach($normalizationsMatrixR as $j => $normalizationMatrixR)
-                            <td>{{ $normalizationMatrixR[$i] }}</td>
+                        <td>{{ $normalizationMatrixR[$i] }}</td>
                         @endforeach
                     </tr>
                     @endforeach
@@ -107,12 +107,12 @@
 
 <div class="card shadow mb-4">
     <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">Matrix (Y)</h6>
+        <h6 class="m-0 font-weight-bold text-dark">Matrix (Y)</h6>
     </div>
     <div class="card-body">
         <div class="table-responsive">
             <table class="table table-bordered" width="100%" cellspacing="0">
-                <thead class="bg-gradient-primary">
+                <thead class="bg-dark">
                     <tr class="text-white">
                         <th width="10">No</th>
                         <th>Customer Name</th>
@@ -128,7 +128,7 @@
                         <td>{{ $loop->index + 1 }}</td>
                         <td>{{ $customerEvaluation->customer->fullName }}</td>
                         @foreach($normalizationsMatrixY as $j => $normalizationMatrixY)
-                            <td>{{ $normalizationMatrixY[$i] }}</td>
+                        <td>{{ $normalizationMatrixY[$i] }}</td>
                         @endforeach
                     </tr>
                     @endforeach
@@ -140,12 +140,12 @@
 
 <div class="card shadow mb-4">
     <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">Positive Ideal Solution (A<sup>+</sup>)</h6>
+        <h6 class="m-0 font-weight-bold text-dark">Positive Ideal Solution (A<sup>+</sup>)</h6>
     </div>
     <div class="card-body">
         <div class="table-responsive">
             <table class="table table-bordered" width="100%" cellspacing="0">
-                <thead class="bg-gradient-primary">
+                <thead class="bg-dark">
                     <tr class="text-white">
                         @foreach ($criterias as $criteria)
                         <th>{{ $criteria->code }}</th>
@@ -156,7 +156,7 @@
                 <tbody>
                     <tr>
                         @foreach ($positiveIdealSolutions as $i => $positiveIdealSolution)
-                            <td>{{ $positiveIdealSolution }}</td>
+                        <td>{{ $positiveIdealSolution }}</td>
                         @endforeach
                     </tr>
                 </tbody>
@@ -168,12 +168,12 @@
 
 <div class="card shadow mb-4">
     <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">Negative Ideal Solution (A<sub>+</sub>)</h6>
+        <h6 class="m-0 font-weight-bold text-dark">Negative Ideal Solution (A<sub>+</sub>)</h6>
     </div>
     <div class="card-body">
         <div class="table-responsive">
             <table class="table table-bordered" width="100%" cellspacing="0">
-                <thead class="bg-gradient-primary">
+                <thead class="bg-dark">
                     <tr class="text-white">
                         @foreach ($criterias as $criteria)
                         <th>{{ $criteria->code }}</th>
@@ -184,7 +184,7 @@
                 <tbody>
                     <tr>
                         @foreach ($negativeIdealSolutions as $i => $negativeIdealSolution)
-                            <td>{{ $negativeIdealSolution }}</td>
+                        <td>{{ $negativeIdealSolution }}</td>
                         @endforeach
                     </tr>
                 </tbody>
@@ -196,12 +196,12 @@
 
 <div class="card shadow mb-4">
     <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">Positive Ideal Distance (S<sub>i</sub><sup>+</sup>)</h6>
+        <h6 class="m-0 font-weight-bold text-dark">Positive Ideal Distance (S<sub>i</sub><sup>+</sup>)</h6>
     </div>
     <div class="card-body">
         <div class="table-responsive">
             <table class="table table-bordered" width="100%" cellspacing="0">
-                <thead class="bg-gradient-primary">
+                <thead class="bg-dark">
                     <tr class="text-white">
                         <th width="10">No</th>
                         <th>Customer Name</th>
@@ -225,12 +225,12 @@
 
 <div class="card shadow mb-4">
     <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">Negative Ideal Distance (S<sub>i</sub><sup>-</sup>)</h6>
+        <h6 class="m-0 font-weight-bold text-dark">Negative Ideal Distance (S<sub>i</sub><sup>-</sup>)</h6>
     </div>
     <div class="card-body">
         <div class="table-responsive">
             <table class="table table-bordered" width="100%" cellspacing="0">
-                <thead class="bg-gradient-primary">
+                <thead class="bg-dark">
                     <tr class="text-white">
                         <th width="10">No</th>
                         <th>Customer Name</th>
@@ -254,12 +254,12 @@
 
 <div class="card shadow mb-4">
     <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">Relative Closeness to the Ideal Solution (V)</h6>
+        <h6 class="m-0 font-weight-bold text-dark">Relative Closeness to the Ideal Solution (V)</h6>
     </div>
     <div class="card-body">
         <div class="table-responsive">
             <table class="table table-bordered" width="100%" cellspacing="0">
-                <thead class="bg-gradient-primary">
+                <thead class="bg-dark">
                     <tr class="text-white">
                         <th width="10">No</th>
                         <th>Customer Name</th>
@@ -283,12 +283,12 @@
 
 <div class="card shadow mb-4">
     <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">Final Results Ranking</h6>
+        <h6 class="m-0 font-weight-bold text-dark">Final Results Ranking</h6>
     </div>
     <div class="card-body">
         <div class="table-responsive">
             <table class="table table-bordered" width="100%" cellspacing="0">
-                <thead class="bg-gradient-primary">
+                <thead class="bg-dark">
                     <tr class="text-white">
                         <th>Customer Name</th>
                         <th>Distance</th>
@@ -310,4 +310,34 @@
         </div>
     </div>
 </div>
+@endsection
+
+@section('javascript_content')
+
+<script>
+    function generatePDF() {
+        var opt = {
+            margin: [0.5, 0, 0, 0],
+            filename: 'report-best-customer.pdf',
+            image: {
+                type: 'jpeg',
+                quality: 0.98
+            },
+            html2canvas: {
+                scale: 2
+            },
+            jsPDF: {
+                unit: 'in',
+                format: 'letter',
+                orientation: 'landscape'
+            },
+            pagebreak: { mode: ['avoid-all', 'css', 'legacy'] }
+        };
+
+        const element = document.getElementById('wrapper');
+        html2pdf().set(opt).from(element).save();
+    }
+    generatePDF()
+</script>
+
 @endsection

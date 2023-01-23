@@ -5,10 +5,10 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Criteria;
+use App\Models\CustomerPointEvaluation;
 use Illuminate\Http\RedirectResponse;
 use App\Http\Requests\CriteriaStoreRequest;
 use App\Http\Requests\CriteriaUpdateRequest;
-
 class CriteriaController extends Controller
 {
     /**
@@ -45,6 +45,7 @@ class CriteriaController extends Controller
         $result = Criteria::create($request->all());
         
         if ($result) {
+            CustomerEvaluation::truncate();
             return redirect()
                 ->route('criterias.index')
                 ->with([

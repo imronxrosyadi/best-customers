@@ -58,6 +58,7 @@ Route::prefix('admin')->group(function () {
     Route::resource('evaluations', CustomerEvaluationController::class);
     Route::get('/evaluations/delete/{id}', [CustomerEvaluationController::class, 'delete']);
     Route::get('/calculates/report', [CalculateController::class, 'report']);
+    Route::get('/calculates/report/decree', [CalculateController::class, 'decree']);
     Route::resource('calculates', CalculateController::class);
 
 });

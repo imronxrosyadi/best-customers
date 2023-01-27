@@ -4,9 +4,29 @@
 
 @section('page_content')
 
+    <div class="header-report">
+        <div class="row-lg-12 d-inline-flex">
+            <div class="col-lg-4">
+                <img src="{{ asset('images/logo.jpeg') }}" alt="setiabudi-hojaya" width="150px" height="150px">
+            </div>
+            <div class="col-lg-12 justify-content-center">
+                <h5>PT. SETIABUDI HOJAYA</h5>
+                <h6>Ruko Taman Palem Lestari Blok A10 No 8C RT.12/RW.10</h6>
+                <h6>Cengkareng - Jakarta Barat 11730 Indonesia</h6>
+                <h6>Email : ptsetiabudihojaya@gmail.com</h6>
+                <h6>Telp : (021)52397068</h6>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="title-report text-center">
+        <h6>LAPORAN HASIL SISTEM PENUNJANG KEPUTUSAN PELANGGAN TERBAIK</h6>
+    </div>
 
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
-    <h1 class="h3 mb-0 text-gray-800">Calculates</h1>
+    <h6 class="h3 mb-0 text-gray-800">Calculation</h6>
 
 </div>
 
@@ -328,7 +348,7 @@
             },
             jsPDF: {
                 unit: 'in',
-                format: 'letter',
+                format: 'a4',
                 orientation: 'landscape'
             },
             pagebreak: { mode: ['avoid-all', 'css', 'legacy'] }

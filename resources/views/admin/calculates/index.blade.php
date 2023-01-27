@@ -7,7 +7,7 @@
 
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
     <h1 class="h3 mb-0 text-gray-800">Calculates</h1>
-    <a href="/admin/calculates/report" class="d-none d-sm-inline-block btn btn-md btn-primary shadow-sm"><i class="fas fa-print text-white-50"></i> Print</a>
+    <a href="/admin/calculates/report" target="_blank" class="d-none d-sm-inline-block btn btn-md btn-primary shadow-sm"><i class="fas fa-print text-white-50"></i> Print</a>
 </div>
 
 <div class="card shadow mb-4">
@@ -279,6 +279,10 @@
             </table>
         </div>
     </div>
+</div>
+
+<div class="col-lg-12 mt-3 mb-3 text-right">
+    <a href="calculates/report/decree" target="_blank" class="btn btn-md btn-primary" type="submit">Download</a>
 </div>
 
 <div class="card shadow mb-4">

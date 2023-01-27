@@ -352,4 +352,109 @@ class CalculateController extends Controller
             "ranking" => $ranking
         ]);
     }
+
+    public function decree()  {
+        $customersEvaluation = CustomerEvaluation::all();
+        $criterias = Criteria::all();
+
+        $customerPointEvaluationsX = [];
+        $performanceRatingsX = [];
+
+        foreach ($customersEvaluation as $customerEvaluation) {
+            $x = [];
+            foreach ($customerEvaluation->customerPointEvaluation as $customerPointEvaluation) {
+                array_push($x, $customerPointEvaluation->subCriteria->value);
+            }
+            array_push($customerPointEvaluationsX, $x);
+        }
+
+        for ($i = 0; $i < count($criterias); $i++) {
+            $values = array_column($customerPointEvaluationsX, $i);
+            $sum = array_sum(array_map(function($x) {
+                return $x ** 2;
+            }, $values));
+            array_push($performanceRatingsX, sqrt($sum));
+        }
+
+        $normalizationsMatrixR = [];
+        foreach ($performanceRatingsX as $i => $performanceRatingX) {
+            $values = array_column($customerPointEvaluationsX, $i);
+            $result = [];
+            foreach ($values as $value) {
+                array_push($result, $value / $performanceRatingX);
+            }
+            array_push($normalizationsMatrixR, $result);
+        }
+
+        $normalizationsMatrixY = [];
+        foreach ($criterias as $i => $criteria) {
+            $arrMatrixR = [];
+            foreach ($normalizationsMatrixR[$i] as $normalizationMatrixR) {
+                array_push($arrMatrixR, $normalizationMatrixR * $criteria->weight);
+            }
+            array_push($normalizationsMatrixY, $arrMatrixR);
+        }
+
+        $positiveIdealSolutions = [];
+        $negativeIdealSolutions = [];
+
+        foreach ($normalizationsMatrixY as $normalizationMatrixY) {
+            array_push($negativeIdealSolutions, min($normalizationMatrixY));
+            array_push($positiveIdealSolutions, max($normalizationMatrixY));
+        }
+
+        $positiveIdealDistances = [];
+        for ($i = 0; $i < count($customersEvaluation); $i++) {
+            $result = 0;
+            for ($j = 0; $j < count($normalizationsMatrixY); $j++) {
+                $result += ($normalizationsMatrixY[$j][$i] - $positiveIdealSolutions[$j]) ** 2;
+            }
+            array_push($positiveIdealDistances, sqrt($result));
+        }
+
+        $negativeIdealDistances = [];
+        for ($i = 0; $i < count($customersEvaluation); $i++) {
+            $result = 0;
+            for ($j = 0; $j < count($normalizationsMatrixY); $j++) {
+                $result += ($normalizationsMatrixY[$j][$i] - $negativeIdealSolutions[$j]) ** 2;
+            }
+            array_push($negativeIdealDistances, sqrt($result));
+        }
+
+        $relativeClosenessIdealSolution = [];
+
+        for ($i = 0; $i < count($negativeIdealDistances); $i++) {
+            $ratio = $negativeIdealDistances[$i] / ($negativeIdealDistances[$i] + $positiveIdealDistances[$i]);
+            $relativeClosenessIdealSolution[] = $ratio;
+        }
+
+        $topsisCustomers = [];
+        foreach ($customersEvaluation as $i => $customer) {
+            $topsisCustomers[] = [
+                "name" => $customer->customer->fullName,
+                "value" => $relativeClosenessIdealSolution[$i]
+            ];
+
+        }
+
+        $ranking = unserialize(serialize($topsisCustomers));
+
+        usort($ranking, function($a, $b) {
+            return $b['value'] <=> $a['value'];
+        });
+
+        return view('admin.calculates.decree', [
+            "customersEvaluation" => $customersEvaluation,
+            "criterias" => $criterias,
+            "normalizationsMatrixR" => $normalizationsMatrixR,
+            "normalizationsMatrixY" => $normalizationsMatrixY,
+            "positiveIdealSolutions" => $positiveIdealSolutions,
+            "negativeIdealSolutions" => $negativeIdealSolutions,
+            "positiveIdealDistances" => $positiveIdealDistances,
+            "negativeIdealDistances" => $negativeIdealDistances,
+            "relativeClosenessIdealSolution" => $relativeClosenessIdealSolution,
+            "topsisCustomers" => $topsisCustomers,
+            "ranking" => $ranking
+        ]);
+    }
 }

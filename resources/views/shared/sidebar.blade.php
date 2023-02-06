@@ -3,9 +3,11 @@
     <!-- Sidebar - Brand -->
     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
         <div class="sidebar-brand-icon rotate-n-15">
-            <i class="fas fa-laugh-wink"></i>
+            <img src="{{ asset('images/logo.png') }}" alt="logo-setiabudi-hojaya" width="50px" height="50px">
         </div>
-        <div class="sidebar-brand-text mx-3">Best Customer</div>
+        <div class="sidebar-brand-text mx-3">
+            Setiabudi Hojaya
+        </div>
     </a>
 
     <!-- Divider -->
@@ -26,28 +28,28 @@
     <li class="{{ (request()->is('admin/customers*')) ? 'active nav-item' : 'nav-item' }}">
         <a class="nav-link" href="{{ route('customers.index') }}">
             <i class="fas fa-user-friends"></i>
-            <span>Customers</span></a>
+            <span>Pelanggan</span></a>
     </li>
 
     <!-- Nav Item - Criteria -->
     <li class="{{ (request()->is('admin/criterias*')) ? 'active nav-item' : 'nav-item' }}">
         <a class="nav-link" href="{{ url('admin/criterias') }}">
             <i class="fas fa-splotch"></i>
-            <span>Criteria</span></a>
+            <span>Kriteria</span></a>
     </li>
 
     <li class="{{ (request()->is('admin/sub-criterias*')) ? 'active nav-item' : 'nav-item' }}">
         <a class="nav-link" href="{{ url('admin/sub-criterias') }}">
         <i class="fas fa-splotch"></i>
 
-            <span>Sub Criterias</span></a>
+            <span>Nilai Kriteria</span></a>
     </li>
 
     <!-- Nav Item - Evaluation -->
     <li class="{{ (request()->is('admin/evaluations*')) ? 'active nav-item' : 'nav-item' }}">
         <a class="nav-link" href="{{ url('admin/evaluations') }}">
             <i class="fas fa-users-cog"></i>
-            <span>Evaluation</span></a>
+            <span>Evaluasi</span></a>
     </li>
 
 
@@ -55,7 +57,7 @@
     <li class="{{ (request()->is('admin/calculates*')) ? 'active nav-item' : 'nav-item' }}">
         <a class="nav-link" href="{{ url('admin/calculates') }}">
             <i class="fas fa-calculator"></i>
-            <span>Calculate</span></a>
+            <span>Kalkulasi</span></a>
     </li>
 
     <!-- Nav Item - Report -->

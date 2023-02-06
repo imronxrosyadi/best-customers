@@ -152,14 +152,14 @@ class CustomerEvaluationController extends Controller
             $customerPointEvaluation->sub_criteria_id = $subcriteria;
             $customerPointEvaluation->save();
         }
-        
+
         return redirect()
             ->route('evaluations.index')
             ->with([
                 'success' => 'Customer Evaluation has been updated successfully'
             ]);
 
-        
+
         // ori
         // foreach ($request->subcriteria as $subcriteria) {
         //     $customerPointEvaluation = new CustomerPointEvaluation();

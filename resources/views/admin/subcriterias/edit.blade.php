@@ -18,7 +18,7 @@
 <div class="col-24">
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">Edit Sub Criteria</h6>
+            <h6 class="m-0 font-weight-bold text-primary">Edit Data Nilai Kriteria</h6>
         </div>
         <div class="card-body">
             <form class="user" action="{{ route('sub-criterias.update', $subCriteria->id) }}" method="POST">
@@ -31,15 +31,15 @@
                 <!-- sub criteria -->
                 <div class="form-group row">
                     <div class="col-sm-12 mb-3 mb-sm-0">
-                        <label for="name">Sub Criteria Name</label>
-                        <input value="{{ old('name', $subCriteria->name) }}" type="text" class="form-control" id="name" name="name" placeholder="Sub Criteria Name">
+                        <label for="name">Nama Nilai Kriteria</label>
+                        <input value="{{ old('name', $subCriteria->name) }}" type="text" class="form-control" id="name" name="name" placeholder="Nama Nilai Kriteria">
                     </div>
                 </div>
 
                 <div class="form-group row">
                     <div class="col-sm-12 mb-3 mb-sm-0">
-                        <label for="weight">Value</label>
-                        <input value="{{ old('value', $subCriteria->value) }}" type="text" class="form-control" id="value" name="value" placeholder="Value">
+                        <label for="weight">Nilai</label>
+                        <input value="{{ old('value', $subCriteria->value) }}" type="text" class="form-control" id="value" name="value" placeholder="Nilai">
                     </div>
                 </div>
 
@@ -49,7 +49,7 @@
                     </button>
 
                     <a href="{{ route('sub-criterias.index') }}" class="btn btn-google btn">
-                        <i class="fas fa-backspace"></i> Cancel
+                        <i class="fas fa-backspace"></i> Batal
                     </a>
                 </div>
             </form>

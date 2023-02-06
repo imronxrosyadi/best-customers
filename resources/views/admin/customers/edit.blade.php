@@ -18,7 +18,7 @@
 <div class="col-24">
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">Edit Customer</h6>
+            <h6 class="m-0 font-weight-bold text-primary">Edit Data Pelanggan</h6>
         </div>
         <div class="card-body">
             <form class="user" action="{{ route('customers.update', $customer->idNumber) }}" method="POST">
@@ -30,8 +30,8 @@
                 <input type="hidden" name="id" value="{{ $customer->id }}" />
                 <div class="form-group row">
                     <div class="col-sm-12 mb-3 mb-sm-0">
-                        <label for="fullName">Full Name</label>
-                        <input value="{{ old('fullName', $customer->fullName) }}" type="text" class="form-control" id="fullName" name="fullName" placeholder="Full Name">
+                        <label for="fullName">Nama Lengkap</label>
+                        <input value="{{ old('fullName', $customer->fullName) }}" type="text" class="form-control" id="fullName" name="fullName" placeholder="Nama Lengkap">
                     </div>
 
                 </div>
@@ -45,16 +45,16 @@
 
                 <div class="form-group row">
                     <div class="col-sm-12 mb-3 mb-sm-0">
-                        <label for="dateOfBirth">Date of Birth</label>
+                        <label for="dateOfBirth">Tanggal Lahir</label>
                         <input value="{{ old('dateOfBirth', $customer->dateOfBirth) }}" type="date" class="form-control" id="dateOfBirth" name="dateOfBirth"
-                            placeholder="Place / Date of Birth">
+                            placeholder="Tanggal Lahir">
                     </div>
 
                 </div>
 
                 <div class="form-group row">
                     <div class="col-sm-12 mb-3 mb-sm-0">
-                        <label for="gender">Gender</label>
+                        <label for="gender">Jenis Kelamin</label>
                         <select value="{{ old('gender', $customer->gender) }}" class="form-control" name="gender">
                             <option value="L" @selected($customer->gender == "L")>Laki-laki</option>
                             <option value="P" @selected($customer->gender == "P")>Perempuan</option>
@@ -66,8 +66,8 @@
 
                 <div class="form-group row">
                     <div class="col-sm-12 mb-3 mb-sm-0">
-                        <label for="address">Address</label>
-                        <input value="{{ old('address', $customer->address) }}" type="text" class="form-control" id="address" name="address" placeholder="Address">
+                        <label for="address">Alamat</label>
+                        <input value="{{ old('address', $customer->address) }}" type="text" class="form-control" id="address" name="address" placeholder="Alamat">
                     </div>
 
                 </div>
@@ -78,7 +78,7 @@
                     </button>
 
                     <a href="{{ route('customers.index') }}" class="btn btn-google btn">
-                        <i class="fas fa-backspace"></i> Cancel
+                        <i class="fas fa-backspace"></i> Batal
                     </a>
 
                 </div>

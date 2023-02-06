@@ -15,11 +15,7 @@ class Customer extends Model
         'idNumber',
         'dateOfBirth',
         'gender',
-        'address',
-        'religion',
-        'maritalStatus',
-        'job',
-        'citizenship',
+        'address'
     ];
 
     public function customerEvaluation()

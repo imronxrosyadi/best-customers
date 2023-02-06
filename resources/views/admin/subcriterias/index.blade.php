@@ -8,7 +8,7 @@
 </div>
 @endif
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
-    <h1 class="h3 mb-0 text-gray-800">Sub Criterias</h1>
+    <h1 class="h3 mb-0 text-gray-800">Nilai Kriteria</h1>
 
 </div>
 
@@ -19,7 +19,7 @@
             <h6 class="m-0 font-weight-bold text-primary">{{ $criteria->name }} ({{ $criteria->code }})</h6>
             <a href="/admin/sub-criterias/{{$criteria->id}}/create"
                 class="d-none d-sm-inline-block btn btn-md btn-primary shadow-sm"><i
-                    class="fas fa-plus text-white-50"></i> Add Sub Criteria</a>
+                    class="fas fa-plus text-white-50"></i> Tambah Nilai Kriteria</a>
         </div>
     </div>
 
@@ -29,17 +29,17 @@
                 <thead class="bg-gradient-primary">
                     <tr class="text-white">
                         <th width="10">No</th>
-                        <th>Sub Criteria Name</th>
-                        <th>Value</th>
-                        <th>Actions</th>
+                        <th>Nama Nilai Kriteria</th>
+                        <th>Nilai</th>
+                        <th>Aksi</th>
                     </tr>
                 </thead>
                 <tfoot class="bg-gradient-primary">
                     <tr class="text-white">
                         <th width="10">No</th>
-                        <th>Sub Criteria Name</th>
-                        <th>Value</th>
-                        <th>Actions</th>
+                        <th>Nama Nilai Kriteria</th>
+                        <th>Nilai</th>
+                        <th>Aksi</th>
                     </tr>
                 </tfoot>
                 <tbody>

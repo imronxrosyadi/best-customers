@@ -15,18 +15,18 @@
 <div class="col-24">
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">Edit Customer Evalution</h6>
+            <h6 class="m-0 font-weight-bold text-primary">Edit Data Evaluasi Pelanggan</h6>
         </div>
         <div class="card-body">
             <form class="user" action="{{ route('evaluations.update', $customerSelected->id) }}" method="POST">
                 @csrf
                 @method('PUT')
-    
+
                 <div class="form-group row">
                     <div class="col-sm-12 mb-3 mb-sm-0">
-                        <label for="type">Customer</label>
+                        <label for="type">Pelanggan</label>
                         <select value="{{ old('customer_id', $customerSelected->customer->id) }}" class="form-control" name="customer_id" disabled>
-                            <option selected>Please select for customer</option>
+                            <option selected>Pilih data pelanggan</option>
                             @foreach ($customers as $customer)
                                 <option value="{{ $customerSelected->customer_id }}" @selected($customer->id == $customerSelected->customer_id)>{{ $customer->fullName }}</option>
                             @endforeach
@@ -55,7 +55,7 @@
                     </button>
 
                     <a href="{{ route('evaluations.index') }}" class="btn btn-google btn">
-                        <i class="fas fa-backspace"></i> Cancel
+                        <i class="fas fa-backspace"></i> Batal
                     </a>
                 </div>
             </form>

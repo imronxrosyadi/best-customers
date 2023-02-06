@@ -6,13 +6,13 @@
 
 
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
-    <h1 class="h3 mb-0 text-gray-800">Calculates</h1>
-    <a href="/admin/calculates/report" target="_blank" class="d-none d-sm-inline-block btn btn-md btn-primary shadow-sm"><i class="fas fa-print text-white-50"></i> Print</a>
+    <h1 class="h3 mb-0 text-gray-800">Kalkulasi</h1>
+    <a href="/admin/calculates/report" target="_blank" class="d-none d-sm-inline-block btn btn-md btn-primary shadow-sm"><i class="fas fa-print text-white-50"></i> Cetak</a>
 </div>
 
 <div class="card shadow mb-4">
     <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">Decision Matrix (X)</h6>
+        <h6 class="m-0 font-weight-bold text-primary">Matriks Keputusan (X)</h6>
     </div>
     <div class="card-body">
         <div class="table-responsive">
@@ -20,9 +20,9 @@
                 <thead class="bg-gradient-primary">
                     <tr class="text-white">
                         <th width="10">No</th>
-                        <th>Customer Name</th>
+                        <th>Nama Pelanggan</th>
                         @foreach ($criterias as $criteria)
-                        <th>{{ $criteria->code }}</th>
+                        <th>{{ $criteria->name }}</th>
                         @endforeach
                     </tr>
                 </thead>
@@ -46,7 +46,7 @@
 
 <div class="card shadow mb-4">
     <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">Criteria Weight (W)</h6>
+        <h6 class="m-0 font-weight-bold text-primary">Bobot Kriteria (W)</h6>
     </div>
     <div class="card-body">
         <div class="table-responsive">
@@ -54,7 +54,7 @@
                 <thead class="bg-gradient-primary">
                     <tr class="text-white">
                         @foreach ($criterias as $criteria)
-                        <th>{{ $criteria->code }}</th>
+                        <th>{{ $criteria->name }}</th>
                         @endforeach
                     </tr>
                 </thead>
@@ -73,7 +73,7 @@
 
 <div class="card shadow mb-4">
     <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">Normalization Matrix (R)</h6>
+        <h6 class="m-0 font-weight-bold text-primary">Matriks Normalisasi (R)</h6>
     </div>
     <div class="card-body">
         <div class="table-responsive">
@@ -81,9 +81,9 @@
                 <thead class="bg-gradient-primary">
                     <tr class="text-white">
                         <th width="10">No</th>
-                        <th>Customer Name</th>
+                        <th>Nama Pelanggan</th>
                         @foreach ($criterias as $criteria)
-                        <th>{{ $criteria->code }}</th>
+                        <th>{{ $criteria->name }}</th>
                         @endforeach
                     </tr>
                 </thead>
@@ -107,7 +107,7 @@
 
 <div class="card shadow mb-4">
     <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">Matrix (Y)</h6>
+        <h6 class="m-0 font-weight-bold text-primary">Matriks (Y)</h6>
     </div>
     <div class="card-body">
         <div class="table-responsive">
@@ -115,9 +115,9 @@
                 <thead class="bg-gradient-primary">
                     <tr class="text-white">
                         <th width="10">No</th>
-                        <th>Customer Name</th>
+                        <th>Nama Pelanggan</th>
                         @foreach ($criterias as $criteria)
-                        <th>{{ $criteria->code }}</th>
+                        <th>{{ $criteria->name }}</th>
                         @endforeach
                     </tr>
                 </thead>
@@ -140,7 +140,7 @@
 
 <div class="card shadow mb-4">
     <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">Positive Ideal Solution (A<sup>+</sup>)</h6>
+        <h6 class="m-0 font-weight-bold text-primary">Solusi Ideal Positif (A<sup>+</sup>)</h6>
     </div>
     <div class="card-body">
         <div class="table-responsive">
@@ -148,7 +148,7 @@
                 <thead class="bg-gradient-primary">
                     <tr class="text-white">
                         @foreach ($criterias as $criteria)
-                        <th>{{ $criteria->code }}</th>
+                        <th>{{ $criteria->name }}</th>
                         @endforeach
                     </tr>
                 </thead>
@@ -168,7 +168,7 @@
 
 <div class="card shadow mb-4">
     <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">Negative Ideal Solution (A<sub>+</sub>)</h6>
+        <h6 class="m-0 font-weight-bold text-primary">Solusi Ideal Negatif (A<sub>+</sub>)</h6>
     </div>
     <div class="card-body">
         <div class="table-responsive">
@@ -176,7 +176,7 @@
                 <thead class="bg-gradient-primary">
                     <tr class="text-white">
                         @foreach ($criterias as $criteria)
-                        <th>{{ $criteria->code }}</th>
+                        <th>{{ $criteria->name }}</th>
                         @endforeach
                     </tr>
                 </thead>
@@ -196,7 +196,7 @@
 
 <div class="card shadow mb-4">
     <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">Positive Ideal Distance (S<sub>i</sub><sup>+</sup>)</h6>
+        <h6 class="m-0 font-weight-bold text-primary">Jarak Ideal Positf (D<sub>i</sub><sup>+</sup>)</h6>
     </div>
     <div class="card-body">
         <div class="table-responsive">
@@ -204,8 +204,8 @@
                 <thead class="bg-gradient-primary">
                     <tr class="text-white">
                         <th width="10">No</th>
-                        <th>Customer Name</th>
-                        <th>Distance</th>
+                        <th>Nama Pelanggan</th>
+                        <th>Jarak</th>
                     </tr>
                 </thead>
 
@@ -225,7 +225,7 @@
 
 <div class="card shadow mb-4">
     <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">Negative Ideal Distance (S<sub>i</sub><sup>-</sup>)</h6>
+        <h6 class="m-0 font-weight-bold text-primary">Jarak Ideal Negatif (D<sub>i</sub><sup>-</sup>)</h6>
     </div>
     <div class="card-body">
         <div class="table-responsive">
@@ -233,8 +233,8 @@
                 <thead class="bg-gradient-primary">
                     <tr class="text-white">
                         <th width="10">No</th>
-                        <th>Customer Name</th>
-                        <th>Distance</th>
+                        <th>Nama Pelanggan</th>
+                        <th>Jarak</th>
                     </tr>
                 </thead>
 
@@ -254,7 +254,7 @@
 
 <div class="card shadow mb-4">
     <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">Relative Closeness to the Ideal Solution (V)</h6>
+        <h6 class="m-0 font-weight-bold text-primary">Kedekatan Relatif dengan Solusi Ideal (V)</h6>
     </div>
     <div class="card-body">
         <div class="table-responsive">
@@ -262,8 +262,8 @@
                 <thead class="bg-gradient-primary">
                     <tr class="text-white">
                         <th width="10">No</th>
-                        <th>Customer Name</th>
-                        <th>Distance</th>
+                        <th>Nama Pelanggan</th>
+                        <th>Jarak</th>
                     </tr>
                 </thead>
 
@@ -282,21 +282,21 @@
 </div>
 
 <div class="col-lg-12 mt-3 mb-3 text-right">
-    <a href="calculates/report/decree" target="_blank" class="btn btn-md btn-primary" type="submit">Download</a>
+    <a href="calculates/report/decree" target="_blank" class="btn btn-md btn-primary" type="submit">Unduh</a>
 </div>
 
 <div class="card shadow mb-4">
     <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">Final Results Ranking</h6>
+        <h6 class="m-0 font-weight-bold text-primary">Peringkat Hasil Akhir</h6>
     </div>
     <div class="card-body">
         <div class="table-responsive">
             <table class="table table-bordered" width="100%" cellspacing="0">
                 <thead class="bg-gradient-primary">
                     <tr class="text-white">
-                        <th>Customer Name</th>
-                        <th>Distance</th>
-                        <th>Rank</th>
+                        <th>Nama Pelanggan</th>
+                        <th>Jarak</th>
+                        <th>Peringkat</th>
 
                     </tr>
                 </thead>

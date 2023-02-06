@@ -10,13 +10,13 @@
 </div>
 @endif
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
-    <h1 class="h3 mb-0 text-gray-800">Evaluations</h1>
-    <a href="{{ route('evaluations.create') }}" class="d-none d-sm-inline-block btn btn-md btn-primary shadow-sm"><i class="fas fa-plus text-white-50"></i> Add Customer Evaluation</a>
+    <h1 class="h3 mb-0 text-gray-800">Evaluasi</h1>
+    <a href="{{ route('evaluations.create') }}" class="d-none d-sm-inline-block btn btn-md btn-primary shadow-sm"><i class="fas fa-plus text-white-50"></i> Tambah Evaluasi Pelanggan</a>
 </div>
 
 <div class="card shadow mb-4">
     <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">Evaluations Table</h6>
+        <h6 class="m-0 font-weight-bold text-primary">Tabel Data Evaluasi</h6>
     </div>
     <div class="card-body">
         <div class="table-responsive">
@@ -24,15 +24,15 @@
                 <thead class="bg-gradient-primary">
                     <tr class="text-white">
                         <th width="10">No</th>
-                        <th>Customer Name</th>
-                        <th>Actions</th>
+                        <th>Nama Pelanggan</th>
+                        <th>Aksi</th>
                     </tr>
                 </thead>
                 <tfoot class="bg-gradient-primary">
                     <tr class="text-white">
                         <th width="10">No</th>
-                        <th>Customer Name</th>
-                        <th>Actions</th>
+                        <th>Nama Pelanggan</th>
+                        <th>Aksi</th>
                     </tr>
                 </tfoot>
                 <tbody>

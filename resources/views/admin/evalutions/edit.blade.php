@@ -15,7 +15,7 @@
 <div class="col-24">
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">Edit Data Evaluasi Pelanggan</h6>
+            <h6 class="m-0 font-weight-bold text-info">Edit Data Evaluasi Pelanggan</h6>
         </div>
         <div class="card-body">
             <form class="user" action="{{ route('evaluations.update', $customerSelected->id) }}" method="POST">

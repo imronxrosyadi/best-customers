@@ -15,7 +15,7 @@
 <div class="col-24">
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">Edit Data Kriteria</h6>
+            <h6 class="m-0 font-weight-bold text-info">Edit Data Kriteria</h6>
         </div>
         <div class="card-body">
             <form class="user" action="{{ route('criterias.update', $criteria->code) }}" method="POST">

@@ -50,8 +50,8 @@
                                         </div>
                                     </div>
                                     <!-- <a href="/login" class="btn btn-primary btn-user btn-block">Login</a> -->
-                                    <button class="btn btn-primary btn-user btn-block" type="submit">Masuk</button>
-                                    <small class="d-block text-center mt-3">Tidak Terdaftar?<a href="/register"> Daftar</a> </small>
+                                    <button class="btn btn-info btn-user btn-block" type="submit">Masuk</button>
+                                    <small class="d-block text-center mt-3">Tidak Terdaftar?<a href="/register" class="text-info"> Daftar</a> </small>
                                 </form>
 
                             </div>

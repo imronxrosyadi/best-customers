@@ -5,3 +5,8 @@
 .sign-on-name {
     margin-top: 100px;
 }
+
+.page-item.active .page-link {
+    background-color: #36b9cc;
+    border-color: #36b9cc;
+}

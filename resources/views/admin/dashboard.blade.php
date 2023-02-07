@@ -19,7 +19,7 @@
                             <!-- Project Card Example -->
                             <div class="card shadow mb-4">
                                 <div class="card-header py-3">
-                                    <h6 class="m-0 font-weight-bold text-primary">Selamat Datang</h6>
+                                    <h6 class="m-0 font-weight-bold text-info">Selamat Datang</h6>
                                 </div>
                                 <div class="card-body">
                                     <h4 class="small font-weight-bold">Halo, selamat datang di sistem penunjang keputusan pelanggan laundry terbaik.</h4>

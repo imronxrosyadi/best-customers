@@ -15,18 +15,18 @@
 @endif
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
     <h1 class="h3 mb-0 text-gray-800">Pelanggan</h1>
-    <a href="{{ route('customers.create') }}" class="d-none d-sm-inline-block btn btn-md btn-primary shadow-sm"><i
+    <a href="{{ route('customers.create') }}" class="d-none d-sm-inline-block btn btn-md btn-info shadow-sm"><i
             class="fas fa-plus text-white-50"></i> Tambah Data Pelanggan</a>
 </div>
 
 <div class="card shadow mb-4">
     <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">Tabel Data Pelanggan</h6>
+        <h6 class="m-0 font-weight-bold text-info">Tabel Data Pelanggan</h6>
     </div>
     <div class="card-body">
         <div class="table-responsive">
             <table class="table table-bordered" id="dataTableCustomers" width="100%" cellspacing="0">
-                <thead class="bg-gradient-primary">
+                <thead class="bg-gradient-info">
                     <tr class="text-white">
                         <th>ID Member</th>
                         <th>Nama Lengkap</th>
@@ -36,7 +36,7 @@
                         <th>Aksi</th>
                     </tr>
                 </thead>
-                <tfoot class="bg-gradient-primary">
+                <tfoot class="bg-gradient-info">
                     <tr class="text-white">
                         <th>ID Member</th>
                         <th>Nama Lengkap</th>

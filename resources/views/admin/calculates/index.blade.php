@@ -7,17 +7,17 @@
 
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
     <h1 class="h3 mb-0 text-gray-800">Kalkulasi</h1>
-    <a href="/admin/calculates/report" target="_blank" class="d-none d-sm-inline-block btn btn-md btn-primary shadow-sm"><i class="fas fa-print text-white-50"></i> Cetak</a>
+    <a href="/admin/calculates/report" target="_blank" class="d-none d-sm-inline-block btn btn-md btn-info shadow-sm"><i class="fas fa-print text-white-50"></i> Cetak</a>
 </div>
 
 <div class="card shadow mb-4">
     <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">Matriks Keputusan (X)</h6>
+        <h6 class="m-0 font-weight-bold text-info">Matriks Keputusan (X)</h6>
     </div>
     <div class="card-body">
         <div class="table-responsive">
             <table class="table table-bordered" width="100%" cellspacing="0">
-                <thead class="bg-gradient-primary">
+                <thead class="bg-gradient-info">
                     <tr class="text-white">
                         <th width="10">No</th>
                         <th>Nama Pelanggan</th>
@@ -46,12 +46,12 @@
 
 <div class="card shadow mb-4">
     <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">Bobot Kriteria (W)</h6>
+        <h6 class="m-0 font-weight-bold text-info">Bobot Kriteria (W)</h6>
     </div>
     <div class="card-body">
         <div class="table-responsive">
             <table class="table table-bordered" width="100%" cellspacing="0">
-                <thead class="bg-gradient-primary">
+                <thead class="bg-gradient-info">
                     <tr class="text-white">
                         @foreach ($criterias as $criteria)
                         <th>{{ $criteria->name }}</th>
@@ -73,12 +73,12 @@
 
 <div class="card shadow mb-4">
     <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">Matriks Normalisasi (R)</h6>
+        <h6 class="m-0 font-weight-bold text-info">Matriks Normalisasi (R)</h6>
     </div>
     <div class="card-body">
         <div class="table-responsive">
             <table class="table table-bordered" width="100%" cellspacing="0">
-                <thead class="bg-gradient-primary">
+                <thead class="bg-gradient-info">
                     <tr class="text-white">
                         <th width="10">No</th>
                         <th>Nama Pelanggan</th>
@@ -107,12 +107,12 @@
 
 <div class="card shadow mb-4">
     <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">Matriks (Y)</h6>
+        <h6 class="m-0 font-weight-bold text-info">Matriks (Y)</h6>
     </div>
     <div class="card-body">
         <div class="table-responsive">
             <table class="table table-bordered" width="100%" cellspacing="0">
-                <thead class="bg-gradient-primary">
+                <thead class="bg-gradient-info">
                     <tr class="text-white">
                         <th width="10">No</th>
                         <th>Nama Pelanggan</th>
@@ -140,12 +140,12 @@
 
 <div class="card shadow mb-4">
     <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">Solusi Ideal Positif (A<sup>+</sup>)</h6>
+        <h6 class="m-0 font-weight-bold text-info">Solusi Ideal Positif (A<sup>+</sup>)</h6>
     </div>
     <div class="card-body">
         <div class="table-responsive">
             <table class="table table-bordered" width="100%" cellspacing="0">
-                <thead class="bg-gradient-primary">
+                <thead class="bg-gradient-info">
                     <tr class="text-white">
                         @foreach ($criterias as $criteria)
                         <th>{{ $criteria->name }}</th>
@@ -168,12 +168,12 @@
 
 <div class="card shadow mb-4">
     <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">Solusi Ideal Negatif (A<sub>+</sub>)</h6>
+        <h6 class="m-0 font-weight-bold text-info">Solusi Ideal Negatif (A<sub>+</sub>)</h6>
     </div>
     <div class="card-body">
         <div class="table-responsive">
             <table class="table table-bordered" width="100%" cellspacing="0">
-                <thead class="bg-gradient-primary">
+                <thead class="bg-gradient-info">
                     <tr class="text-white">
                         @foreach ($criterias as $criteria)
                         <th>{{ $criteria->name }}</th>
@@ -196,12 +196,12 @@
 
 <div class="card shadow mb-4">
     <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">Jarak Ideal Positf (D<sub>i</sub><sup>+</sup>)</h6>
+        <h6 class="m-0 font-weight-bold text-info">Jarak Ideal Positf (D<sub>i</sub><sup>+</sup>)</h6>
     </div>
     <div class="card-body">
         <div class="table-responsive">
             <table class="table table-bordered" width="100%" cellspacing="0">
-                <thead class="bg-gradient-primary">
+                <thead class="bg-gradient-info">
                     <tr class="text-white">
                         <th width="10">No</th>
                         <th>Nama Pelanggan</th>
@@ -225,12 +225,12 @@
 
 <div class="card shadow mb-4">
     <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">Jarak Ideal Negatif (D<sub>i</sub><sup>-</sup>)</h6>
+        <h6 class="m-0 font-weight-bold text-info">Jarak Ideal Negatif (D<sub>i</sub><sup>-</sup>)</h6>
     </div>
     <div class="card-body">
         <div class="table-responsive">
             <table class="table table-bordered" width="100%" cellspacing="0">
-                <thead class="bg-gradient-primary">
+                <thead class="bg-gradient-info">
                     <tr class="text-white">
                         <th width="10">No</th>
                         <th>Nama Pelanggan</th>
@@ -254,12 +254,12 @@
 
 <div class="card shadow mb-4">
     <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">Kedekatan Relatif dengan Solusi Ideal (V)</h6>
+        <h6 class="m-0 font-weight-bold text-info">Kedekatan Relatif dengan Solusi Ideal (V)</h6>
     </div>
     <div class="card-body">
         <div class="table-responsive">
             <table class="table table-bordered" width="100%" cellspacing="0">
-                <thead class="bg-gradient-primary">
+                <thead class="bg-gradient-info">
                     <tr class="text-white">
                         <th width="10">No</th>
                         <th>Nama Pelanggan</th>
@@ -282,17 +282,17 @@
 </div>
 
 <div class="col-lg-12 mt-3 mb-3 text-right">
-    <a href="calculates/report/decree" target="_blank" class="btn btn-md btn-primary" type="submit">Unduh</a>
+    <a href="calculates/report/decree" target="_blank" class="btn btn-md btn-info" type="submit">Unduh</a>
 </div>
 
 <div class="card shadow mb-4">
     <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">Peringkat Hasil Akhir</h6>
+        <h6 class="m-0 font-weight-bold text-info">Peringkat Hasil Akhir</h6>
     </div>
     <div class="card-body">
         <div class="table-responsive">
             <table class="table table-bordered" width="100%" cellspacing="0">
-                <thead class="bg-gradient-primary">
+                <thead class="bg-gradient-info">
                     <tr class="text-white">
                         <th>Nama Pelanggan</th>
                         <th>Jarak</th>
